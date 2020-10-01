@@ -194,27 +194,24 @@ label.field__label {
     margin-top: 4px;
 }
 
-.fieldgroup {
+.fieldGroup {
     display: flex;
     justify-content: stretch;
 }
 
-.fieldgroup .field {
+.fieldGroup .field {
     flex: 1;
     padding-bottom: 0;
 }
 
-.fieldgroup .field:not(:last-child) {
+.fieldGroup .field:not(:last-child) {
     margin-right: 20px;
+    padding-bottom: 0;
 }
 
 .field:not(:last-child),
-.fieldgroup:not(:last-child) {
+.fieldGroup:not(:last-child) {
     padding-bottom: 14px;
-}
-
-.fieldgroup .field:not(:last-child) {
-    padding-bottom: 0;
 }
 
 .input {
@@ -248,6 +245,7 @@ textarea.input {
     resize: none;
 }
 
+/*missing element*/
 .select {
     display: block;
     width: 100%;
@@ -300,6 +298,7 @@ textarea.input {
     color: var(--light-blue);
 }
 
+/*missing element*/
 .radiogroup {
 
 }
