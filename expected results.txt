@@ -1,0 +1,33 @@
+!!!look into code
+typos
+check out dead/unused code
+camelcase format
+check all webstorm hints
+recaptcha
+bad practice to calculate elements' size in the code
+check constraints on form fields in the code
+iife
+
+car pictures should match their captions
+selected card should be highlighted
+form field height
+css responsiveness
+check other browsers & mobile view
+
+invalid input, invalid year, drop-off time accepts any value
+drop-off time doesn't have a time picker
+date & time can't be in the past
+drop-off date is after pick up date
+drop-off time is after pick up time
+entered value should correctly appear in the related field
+required fields, check asterisk
+click on continue should validate all fields
+user should be notified about invalid input
+if all fields valid - show the alert with submitted information
+
+
+
+
+
+
+
