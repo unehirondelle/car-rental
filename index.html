@@ -119,20 +119,20 @@
                             <div class="fieldGroup">
                                 <!-- First Name -->
                                 <div class="field">
-                                    <label for="formFieldFirstName" class="field__label">First Name</label>
+                                    <label class="field__label" for="formFieldFirstName">First Name</label>
                                     <div class="field__input">
-                                        <input class="input" id="formFieldFirstName" type="text" name="lastName"
-                                               autocomplete="off" required>
+                                        <input class="input" id="formFieldFirstName" type="text" name="firstName"
+                                               autocomplete="off" required/>
                                     </div>
                                 </div>
                                 <!-- / First Name -->
 
                                 <!-- Last Name -->
                                 <div class="field">
-                                    <label for="formFieldLastName" class="field__label">Last Name</label>
+                                    <label class="field__label" for="formFieldLastName">Last Name</label>
                                     <div class="field__input">
                                         <input class="input" id="formFieldLastName" type="text" name="lastName"
-                                               autocomplete="off">
+                                               autocomplete="off"/>
                                     </div>
                                 </div>
                                 <!-- / Last Name -->
@@ -140,27 +140,27 @@
 
                             <!-- Email -->
                             <div class="field">
-                                <label for="formFieldPhone" class="field__label">Email *</label>
+                                <label class="field__label" for="formFieldEmail">Email *</label>
                                 <div class="field__input">
                                     <input class="input" id="formFieldEmail" type="email" name="email"
-                                           autocomplete="off" required>
+                                           autocomplete="off" required/>
                                 </div>
                             </div>
                             <!-- / Email -->
 
                             <!-- Phone -->
                             <div class="field">
-                                <label for="formFieldPhone" class="field__label">Phone *</label>
+                                <label class="field__label" for="formFieldPhone">Phone *</label>
                                 <div class="field__input">
                                     <input class="input" id="formFieldPhone" type="text" name="phone" autocomplete="off"
-                                           required>
+                                           required/>
                                 </div>
                             </div>
                             <!-- / Phone -->
 
                             <!-- Additional Requests -->
                             <div class="field">
-                                <label for="formFieldAdditionalRequests" class="field__label">Additional
+                                <label class="field__label" for="formFieldAdditionalRequests">Additional
                                     Requests</label>
                                 <div class="field__input">
                                     <textarea class="input" id="formFieldAdditionalRequests"
@@ -170,10 +170,11 @@
                             <!-- / Additional Requests -->
 
                             <div class="field">
-                                <div class="field__label">Are you robot?</div>
+                                <label class="field__label" for="formFieldCaptcha">Are you robot?</label>
                                 <div class="field__input">
                                     <div
                                             class="g-recaptcha"
+                                            id="formFieldCaptcha"
                                             data-sitekey="6LeFMPYUAAAAAFK3xukuIClbBunH_o-Rpg8O6MXG"
                                             data-callback="__handleRecaptchaCallback"
                                             data-expired-callback="__handleRecaptchaExpireCallback"
