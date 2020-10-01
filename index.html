@@ -41,14 +41,14 @@
                                         <label class="visual-select__option">
                                             <input class="visual-select__input" type="radio" name="carType"
                                                    value="standard" checked/>
-                                            <div class="visual-select__icon">🏎️</div>
+                                            <div class="visual-select__icon">🚗</div>
                                             <div class="visual-select__label">Standard</div>
                                         </label>
 
                                         <label class="visual-select__option">
                                             <input class="visual-select__input" type="radio" name="carType"
                                                    value="sport"/>
-                                            <div class="visual-select__icon">🚗</div>
+                                            <div class="visual-select__icon">🏎️</div>
                                             <div class="visual-select__label">Sport</div>
                                         </label>
 
@@ -73,17 +73,17 @@
                             <!-- Pick-up -->
                             <div class="fieldGroup">
                                 <div class="field">
-                                    <label for="formFieldPickupDate" class="field__label">Pick-up Date *</label>
+                                    <label class="field__label" for="formFieldPickUpDate">Pick-up Date *</label>
                                     <div class="field__input">
-                                        <input class="input" id="formFieldPickupDate" type="date" name="dropoffDate"
-                                               required>
+                                        <input class="input" id="formFieldPickUpDate" type="date" name="pickUpDate"
+                                               required/>
                                     </div>
                                 </div>
                                 <div class="field">
-                                    <label for="formFieldPickupTime" class="field__label">Pick-up Time *</label>
+                                    <label class="field__label" for="formFieldPickUpTime">Pick-up Time *</label>
                                     <div class="field__input">
-                                        <input class="input" id="formFieldPickupTime" type="time" name="pickupTime"
-                                               required>
+                                        <input class="input" id="formFieldPickUpTime" type="time" name="pickUpTime"
+                                               required/>
                                     </div>
                                 </div>
                             </div>
@@ -92,24 +92,24 @@
                             <!-- Drop-off -->
                             <div class="fieldGroup">
                                 <div class="field">
-                                    <label for="formFieldDropoffDate" class="field__label">Drop-off Date *</label>
+                                    <label class="field__label" for="formFieldDropOffDate">Drop-off Date *</label>
                                     <div class="field__input">
-                                        <input class="input" id="formFieldDropoffDate" type="date" name="pickupDate"
-                                               required>
+                                        <input class="input" id="formFieldDropOffDate" type="date" name="dropOffDate"
+                                               required/>
                                     </div>
                                 </div>
                                 <div class="field">
-                                    <label for="formFieldDropoffTime" class="field__label">Drop-off Time *</label>
+                                    <label class="field__label" for="formFieldDropOffTime">Drop-off Time *</label>
                                     <div class="field__input">
-                                        <input class="input" id="formFieldDropoffTime" type="text" name="dropoffTime"
-                                               required>
+                                        <input class="input" id="formFieldDropOffTime" type="time" name="dropOffTime"
+                                               required/>
                                     </div>
                                 </div>
                             </div>
                             <!-- / Drop-off -->
 
                             <div class="actions">
-                                <button class="button button--primary" type="submit" data-change-step="1">Continue
+                                <button class="button button--primary" type="button" data-change-step="1">Continue
                                 </button>
                             </div>
                         </div>
