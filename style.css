@@ -66,6 +66,7 @@
 .form__step--active {
     opacity: 1;
     position: absolute;
+    z-index: 10;
 }
 
 .form__submit-lock {
