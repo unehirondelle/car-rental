@@ -30,8 +30,6 @@ function run(appElement) {
             stepElement.style.width = `${formWrapperRect.width}px`;
         });
 
-        formInnerElement.style.transform = `translate(${formWrapperRect.width * state.step}px, 0)`;
-
         const currentFormStepElement = formStepElements[state.step];
         const currentFormStepRect = currentFormStepElement.getBoundingClientRect();
 
@@ -49,7 +47,7 @@ function run(appElement) {
 
     function handleChangeStepElementClick(event) {
         const step = parseInt(event.target.dataset.changeStep, 10);
-        update({ step });
+        update({step});
     }
 
     function handleInputInvalid(event) {
@@ -60,7 +58,7 @@ function run(appElement) {
             return formStepElement.contains(firstInvalidElement);
         });
 
-        update({ step });
+        update({step});
     }
 
     async function handleFormSubmit(event) {
@@ -96,12 +94,12 @@ function run(appElement) {
         formResetElement.addEventListener('click', handleFormResetClick);
 
 
-        window.__handleRecaptchaCallback = () => update({ recaptcha: true });
-        window.__handleRecaptchaExpireCallback = () => update({ recaptcha: true });
+        window.__handleRecaptchaCallback = () => update({recaptcha: true});
+        window.__handleRecaptchaExpireCallback = () => update({recaptcha: true});
     }
 
     listen();
-    update({ ready: true });
+    update({ready: true});
 }
 
 run(document.querySelector('.app'));
