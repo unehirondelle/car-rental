@@ -11,6 +11,7 @@ function run(appElement) {
     const formResetElement = $('.form__reset');
     const formSubmitElement = $('.form__submit');
     const formSubmitLockElement = $('.form__submit-lock');
+    const formInputElements = $$('input');
 
     let state = {
         ready: false,
@@ -47,7 +48,20 @@ function run(appElement) {
 
     function handleChangeStepElementClick(event) {
         const step = parseInt(event.target.dataset.changeStep, 10);
-        update({step});
+        if ((step === 1 && formValidation()) || (step ===0)) {
+            update({step});
+        }
+    }
+
+    function formValidation() {
+        Array.from(formInputElements).forEach((inputField) => {
+            if (!inputField.checkValidity()) {
+                document.getElementById('error').innerHTML = "Please fill out all the fields";
+                return false;
+            }
+            document.getElementById('error').innerHTML = "";
+            return true;
+        })
     }
 
     function handleInputInvalid(event) {
