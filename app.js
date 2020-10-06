@@ -11,6 +11,7 @@ function run(appElement) {
     const formResetElement = $('.form__reset');
     const formSubmitElement = $('.form__submit');
     const formSubmitLockElement = $('.form__submit-lock');
+    const submitButton = $('.submitButton');
 
     let state = {
         ready: false,
@@ -39,12 +40,13 @@ function run(appElement) {
         formSubmitElement.classList.toggle('form__submit--unlocked', state.recaptcha);
         formSubmitLockElement.classList.toggle('form__submit-lock--unlocked', state.recaptcha);
 
-        document.getElementById("formFieldPickUpDate").setAttribute("value", "2020-10-11");
+        /*document.getElementById("formFieldPickUpDate").setAttribute("value", "2020-10-11");
         document.getElementById("formFieldPickUpTime").setAttribute("value", "16:14");
         document.getElementById("formFieldDropOffDate").setAttribute("value", "2020-10-11");
-        document.getElementById("formFieldDropOffTime").setAttribute("value", "16:14");
-        document.getElementById("formFieldFirstName").setAttribute("value", "first");
+        document.getElementById("formFieldDropOffTime").setAttribute("value", "16:14");*/
+        /*document.getElementById("formFieldFirstName").setAttribute("value", "first");
         document.getElementById("formFieldEmail").setAttribute("value", "email@rm");
+        document.getElementById("formFieldPhone").value = "1234567890";*/
     }
 
     function update(change = {}) {
@@ -69,6 +71,8 @@ function run(appElement) {
     }
 
     function handleFormSubmit(event) {
+        event.preventDefault();
+
         console.log("state: ", state);
         if (!state.recaptcha) {
             return;
@@ -85,10 +89,14 @@ function run(appElement) {
     }
 
     function handleFormResetClick() {
+        formBannerElement.classList.remove('form__banner--visible');
+
         update({
-            success: false,
+            recaptcha: false,
+            success: true,
             step: 0
         });
+
     }
 
     function listen() {
@@ -102,7 +110,7 @@ function run(appElement) {
             inputElement.addEventListener('invalid', handleInputInvalid);
         });
 
-        formElement.addEventListener('click', handleFormSubmit);
+        submitButton.addEventListener('click', handleFormSubmit);
         formResetElement.addEventListener('click', handleFormResetClick);
 
 
