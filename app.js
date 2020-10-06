@@ -39,7 +39,6 @@ function run(appElement) {
         formSubmitElement.classList.toggle('form__submit--unlocked', state.recaptcha);
         formSubmitLockElement.classList.toggle('form__submit-lock--unlocked', state.recaptcha);
 
-
     }
 
     function update(change = {}) {
@@ -63,7 +62,7 @@ function run(appElement) {
         update({step});
     }
 
-    async function handleFormSubmit(event) {
+    function handleFormSubmit(event) {
         console.log("state: ", state);
         if (!state.recaptcha) {
             return;
@@ -76,9 +75,6 @@ function run(appElement) {
 
         console.log('The following data will be sent:');
         console.log(data);
-
-        update({state});
-
 
     }
 
@@ -100,12 +96,15 @@ function run(appElement) {
             inputElement.addEventListener('invalid', handleInputInvalid);
         });
 
-        formElement.addEventListener('submit', handleFormSubmit);
+        formElement.addEventListener('click', handleFormSubmit);
         formResetElement.addEventListener('click', handleFormResetClick);
 
 
-        window.__handleRecaptchaCallback = () => update({recaptcha: true});
-        window.__handleRecaptchaExpireCallback = () => update({recaptcha: true});
+        window.__handleRecaptchaCallback = () => {
+            update({recaptcha: true});
+        };
+        window.__handleRecaptchaExpireCallback = () => update({recaptcha: false});
+
     }
 
     listen();
