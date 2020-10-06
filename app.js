@@ -38,6 +38,8 @@ function run(appElement) {
 
         formSubmitElement.classList.toggle('form__submit--unlocked', state.recaptcha);
         formSubmitLockElement.classList.toggle('form__submit-lock--unlocked', state.recaptcha);
+
+
     }
 
     function update(change = {}) {
@@ -62,14 +64,22 @@ function run(appElement) {
     }
 
     async function handleFormSubmit(event) {
+        console.log("state: ", state);
         if (!state.recaptcha) {
             return;
         }
+        const currentFormStepElement = formStepElements[state.step];
+        currentFormStepElement.classList.remove('form__step--active');
+        formBannerElement.classList.add('form__banner--visible');
 
         const data = Object.fromEntries(new FormData(formElement));
 
         console.log('The following data will be sent:');
         console.log(data);
+
+        update({state});
+
+
     }
 
     function handleFormResetClick() {

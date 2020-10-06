@@ -226,6 +226,7 @@ label.field__label {
 .input[type="date"],
 .input[type="time"],
 .input[type="email"],
+.input[type="tel"],
 textarea.input {
     padding: 6px;
     border: 1px solid var(--light-gray);
@@ -239,6 +240,7 @@ textarea.input {
 .input[type="date"]:focus,
 .input[type="time"]:focus,
 .input[type="email"]:focus,
+.input[type="tel"]:focus,
 textarea:focus {
     border-color: var(--black);
 }
