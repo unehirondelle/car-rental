@@ -11,7 +11,6 @@ function run(appElement) {
     const formResetElement = $('.form__reset');
     const formSubmitElement = $('.form__submit');
     const formSubmitLockElement = $('.form__submit-lock');
-    const submitButton = $('.submitButton');
 
     let state = {
         ready: false,
@@ -70,8 +69,8 @@ function run(appElement) {
         update({step});
     }
 
-    function handleFormSubmit(event) {
-        event.preventDefault();
+    async function handleFormSubmit(event) {
+       await event.stopPropagation();
 
         console.log("state: ", state);
         if (!state.recaptcha) {
@@ -110,7 +109,7 @@ function run(appElement) {
             inputElement.addEventListener('invalid', handleInputInvalid);
         });
 
-        submitButton.addEventListener('click', handleFormSubmit);
+        formElement.addEventListener('click', handleFormSubmit);
         formResetElement.addEventListener('click', handleFormResetClick);
 
 

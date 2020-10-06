@@ -25,7 +25,12 @@ click on continue should validate all fields
 user should be notified about invalid input
 if all fields valid - show the alert with submitted information
 
-
+BACKLOG to fix:
+recaptcha (reveal "Rent a car" button if recaptcha is already passed)
+bad practice to calculate elements' size in the code
+date & time can't be in the past
+drop-off date is after pick up date
+drop-off time is after pick up time
 
 
 
