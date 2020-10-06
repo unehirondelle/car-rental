@@ -39,6 +39,12 @@ function run(appElement) {
         formSubmitElement.classList.toggle('form__submit--unlocked', state.recaptcha);
         formSubmitLockElement.classList.toggle('form__submit-lock--unlocked', state.recaptcha);
 
+        document.getElementById("formFieldPickUpDate").setAttribute("value", "2020-10-11");
+        document.getElementById("formFieldPickUpTime").setAttribute("value", "16:14");
+        document.getElementById("formFieldDropOffDate").setAttribute("value", "2020-10-11");
+        document.getElementById("formFieldDropOffTime").setAttribute("value", "16:14");
+        document.getElementById("formFieldFirstName").setAttribute("value", "first");
+        document.getElementById("formFieldEmail").setAttribute("value", "email@rm");
     }
 
     function update(change = {}) {
