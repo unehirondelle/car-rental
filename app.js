@@ -69,22 +69,21 @@ function run(appElement) {
         update({step});
     }
 
-    async function handleFormSubmit(event) {
-       await event.stopPropagation();
-
-        console.log("state: ", state);
+    function handleFormSubmit(event) {
         if (!state.recaptcha) {
             return;
         }
-        const currentFormStepElement = formStepElements[state.step];
-        currentFormStepElement.classList.remove('form__step--active');
-        formBannerElement.classList.add('form__banner--visible');
+        if (event.target.matches("button")) {
+            event.preventDefault();
+            const currentFormStepElement = formStepElements[state.step];
+            currentFormStepElement.classList.remove('form__step--active');
+            formBannerElement.classList.add('form__banner--visible');
 
-        const data = Object.fromEntries(new FormData(formElement));
+            const data = Object.fromEntries(new FormData(formElement));
 
-        console.log('The following data will be sent:');
-        console.log(data);
-
+            console.log('The following data will be sent:');
+            console.log(data);
+        }
     }
 
     function handleFormResetClick() {
